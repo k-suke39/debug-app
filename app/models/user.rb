@@ -37,7 +37,7 @@ class User < ApplicationRecord
       
       def splendiferous_morph(data)
         puts "Splendiferous morph in progress."
-        return "If you don't use debug you will die"
+        return "If you don't use debug you will die, Thank you for coming to study meeting!"
       end
       
       def frozzle_baz(data)
