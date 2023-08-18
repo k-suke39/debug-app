@@ -1,4 +1,7 @@
 class User < ApplicationRecord
+    validates :weight, presence: true
+    validates :height, presence: true
+
     def frobnicate_splines(data)
         puts "Frobnicating splines... Done!"
         shuffled_data = data.shuffle

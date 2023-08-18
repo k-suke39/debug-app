@@ -5,7 +5,6 @@ class UsersController < ApplicationController
   def index
     #@raise_confirm = "raiseで止まってるよ〜"
     Rails.logger.debug("debugレベルのログに出力されるよ")
-    Rails.logger.info("infoレベルのログに出力されるよ")
     pp "pp : ログには出力されないよ"
     @users = User.all
   end
@@ -26,6 +25,8 @@ class UsersController < ApplicationController
 
   # POST /users or /users.json
   def create
+    @action = "Createだよ〜"
+    raise
     @user = User.new(user_params)
       if @user.save
         redirect_to user_url(@user), notice: "User was successfully created." 
@@ -69,6 +70,6 @@ class UsersController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def user_params
-      params.require(:user).permit(:name, :age, :wet, :height)
+      params.require(:user).permit(:name, :age, :waight, :haight)
     end
 end

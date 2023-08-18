@@ -74,3 +74,10 @@ group :test do
   gem "webdrivers"
 end
 
+
+gem "pry-byebug"
+
+#for bettor-erros
+  gem 'better_errors'
+  gem 'binding_of_caller'
+
