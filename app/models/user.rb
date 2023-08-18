@@ -37,8 +37,7 @@ class User < ApplicationRecord
       
       def splendiferous_morph(data)
         puts "Splendiferous morph in progress."
-        morphed_data = "If you don't use debug you will die"
-        puts "Morphed data: #{morphed_data}"
+        return "If you don't use debug you will die"
       end
       
       def frozzle_baz(data)
@@ -98,7 +97,6 @@ class User < ApplicationRecord
       def gobbledygook_spelunk(data)
         puts "Gobbledygook spelunking in progress."
         spelunked_data = splendiferous_morph(data)
-        puts "Spelunked data: #{spelunked_data}"
       end
       
       def quibbleflop_munch(data)
@@ -158,7 +156,6 @@ class User < ApplicationRecord
       def quibblequack_quandary(data)
         puts "Quibblequack quandary underway."
         quandary_data = gobbledygook_spelunk(data)
-        puts "Quandary data: #{quandary_data}"
       end
       
       def zippity_zap(data)
@@ -194,7 +191,6 @@ class User < ApplicationRecord
       def wobblewobble_wander(data)
         puts "Wobblewobble wanderlust taking over."
         wander_data = quibblequack_quandary(data)
-        puts "Wander data: Wobblewobble wanderlust taking over"
       end
       
       def skedaddle_shuffle(data)
@@ -225,12 +221,6 @@ class User < ApplicationRecord
         puts "Wobbleflop wonderment abounds."
         wonder_data = data.map { |item| "#{item} is lost in wobbleflop wonder" }
         puts "Wonder data: #{wonder_data}"
-      end
-      
-      def skedaddle_splendor(data)
-        puts "Skedaddle splendor has arrived."
-        splendor_data = wobblewobble_wander(data)
-        puts "Splendor data: #{splendor_data}"
       end
       
       def bluster_blaze(data)
@@ -274,3 +264,9 @@ class User < ApplicationRecord
         "If you don't use debug you will die"
         ephyr_data = data
       end
+
+      def skedaddle_splendor(data)
+        puts "Skedaddle splendor has arrived."
+        splendor_data = wobblewobble_wander(deta)
+      end
+    end

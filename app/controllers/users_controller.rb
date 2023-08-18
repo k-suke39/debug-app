@@ -3,11 +3,16 @@ class UsersController < ApplicationController
 
   # GET /users or /users.json
   def index
+    #@raise_confirm = "raiseで止まってるよ〜"
+    Rails.logger.debug("debugレベルのログに出力されるよ")
+    Rails.logger.info("infoレベルのログに出力されるよ")
+    pp "pp : ログには出力されないよ"
     @users = User.all
   end
 
   # GET /users/1 or /users/1.json
   def show
+
   end
 
   # GET /users/new
@@ -24,7 +29,6 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
       if @user.save
         redirect_to user_url(@user), notice: "User was successfully created." 
-        render :show, status: :created, location: @user 
       else
         render :new, status: :unprocessable_entity
       end
@@ -42,7 +46,6 @@ class UsersController < ApplicationController
       end
     end
   end
-
   # DELETE /users/1 or /users/1.json
   def destroy
     @user.destroy
@@ -53,9 +56,9 @@ class UsersController < ApplicationController
     end
   end
 
-  def messsage
-    @message = Message.new
-    @answer = @message.skedaddle_splendor("aiueo")
+  def message
+    @user = User.new
+    @message = @user.skedaddle_splendor("aiueo")
   end
 
   private
@@ -66,6 +69,6 @@ class UsersController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def user_params
-      params.require(:user).permit(:name, :age, :weihgt, :height)
+      params.require(:user).permit(:name, :age, :wet, :height)
     end
 end
